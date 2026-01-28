@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                // "${workspaceFolder}/**"
+                //,"/usr/include/opencv4"
+                "./"
+                ,"/home/ubuntu/kobuki/install/include"
+                ,"/home/ubuntu/kobuki/install/include/eigen3" 
+                ,"/home/ubuntu/realsense/librealsense/include/" 
+                ,"/home/ubuntu/realsense/librealsense/examples/C/" 
+                ,"/home/ubuntu/realsense/librealsense/include/" 
+                ,"/home/ubuntu/realsense/librealsense/third-party/"              
+                ,"/usr/local/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/g++",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-arm64"
+        }
+    ],
+    "version": 4
+}

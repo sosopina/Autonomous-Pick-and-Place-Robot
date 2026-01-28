@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "(gdb) Lancer",
+        "type": "cppdbg",
+        "request": "launch",
+        //"program": "${workspaceFolder}/${file}",      // <- ton exécutable
+        "program": "${fileDirname}/robotLigne",
+        "args": [],                                   // <- arguments à passer au programme
+        "stopAtEntry": false,                         // <- s'arrêter au début ou non
+        "cwd": "${workspaceFolder}",                  // <- répertoire de travail
+        "environment": [],
+        "externalConsole": false,                      // <- ouvre un terminal externe
+        "MIMode": "gdb",                              // <- débogueur GNU
+        "miDebuggerPath": "/usr/bin/gdb",
+        "preLaunchTask": "C/C++: g++ générer le fichier actif",
+        "setupCommands": [
+          { "description": "Activer la coloration dans GDB", "text": "-enable-pretty-printing", "ignoreFailures": true }
+        ]
+
+      },
+
+      {
+        "name": "Déboguer le programme C++",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/robotLigne",
+        "args": [],                                   // <- arguments à passer au programme
+        "stopAtEntry": false,                         // <- s'arrêter au début ou non
+        "cwd": "${workspaceFolder}",                  // <- répertoire de travail
+        "environment": [],
+        "externalConsole": false,                      // <- ouvre un terminal externe
+        "MIMode": "gdb",                              // <- débogueur GNU
+        "miDebuggerPath": "/usr/bin/gdb",
+        "preLaunchTask": "C/C++: g++ générer le fichier actif",
+        "setupCommands": [
+          { "description": "Activer la coloration dans GDB", "text": "-enable-pretty-printing", "ignoreFailures": true }
+        ]
+      }
+    ]
+  }
+  

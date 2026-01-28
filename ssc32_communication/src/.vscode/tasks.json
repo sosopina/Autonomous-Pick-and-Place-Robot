@@ -1,0 +1,125 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build C++",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-fpermissive"
+                // ,"./ssc32.c"
+                // ,"./tty_communication.c"
+                // ,"./util.c"
+                ,"./ssc32_bas.cpp"
+                ,"./NatNetClient.cpp"                 
+                ,"./tustin.cpp"//"-I./"
+                ,"./control.cpp"//g++ -c control.cpp -fpermissive -I./  
+                ,"./kobuki_with_rs_program.cpp"//g++ -c kobuki_with_rs_program.cpp
+                ,"-o"
+                ,"robotLigne"
+                ,"-I./"
+                ,"-I/home/ubuntu/kobuki/install/include"
+                ,"-I/home/ubuntu/kobuki/install/include/eigen3" 
+                ,"-I/home/ubuntu/realsense/librealsense/include/" 
+                ,"-I/home/ubuntu/realsense/librealsense/examples/C/" 
+                ,"-I/home/ubuntu/realsense/librealsense/include/" 
+                ,"-I/home/ubuntu/realsense/librealsense/third-party/"              
+                ,"-I/usr/local/include"
+                //,"-I/usr/include/opencv4"
+//                g++ -o kobuki_with_rs_program kobuki_with_rs_program.o NatNetClient.o control.o tustin.o 
+                ,"-L/home/ubuntu/kobuki/install/lib/"
+                ,"-L/home/ubuntu/realsense/librealsense/build/release/"                
+                //,"-L/usr/local/lib"
+                //,"-L/usr/lib/aarch64-linux-gnu/"
+                ,"-lrt"
+                ,"-lm"
+                ,"-lpthread"
+                ,"-lkobuki_core"
+                ,"-lecl_geometry"
+                ,"-lecl_threads"
+                ,"-lecl_time"
+                ,"-lecl_exceptions"
+                ,"-lecl_time_lite"
+                ,"-lecl_type_traits"
+                ,"-lrealsense2"
+               
+                //,"-luvc"
+                //,"-lusb-1.0"
+                //,"`pkg-config"
+                //,"--cflags"
+                //,"--libs"
+                //,"opencv4`"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+            ,"problemMatcher": [
+                "$gcc"
+            ]
+            // ,"options": {
+            //     "env": {
+            //         "LD_LIBRARY_PATH": "/usr/lib/aarch64-linux-gnu/:/home/ubuntu/kobuki/install/lib:/home/ubuntu/realsense/librealsense/build/release/:./:${LD_LIBRARY_PATH}"
+            //     }
+            // }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ générer le fichier actif",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-fdiagnostics-color=always"
+                ,"-fpermissive"
+                ,"-g"
+                // ,"-fpermissive"
+                ,"./NatNetClient.cpp"
+                ,"./ssc32_bas.cpp"
+                // ,"./ssc32.c"
+                // ,"./tty_communication.c"
+                // ,"./util.c"             
+                ,"./tustin.cpp"//"-I./"
+                ,"./control.cpp"//g++ -c control.cpp -fpermissive -I./  
+                ,"./kobuki_with_rs_program.cpp"//g++ -c kobuki_with_rs_program.cpp
+                ,"-o"
+                // ,"robotLigne"
+                ,"${fileDirname}/robotLigne"// "${fileDirname}/${fileBasenameNoExtension}"
+                ,"-I./"
+                ,"-I/home/ubuntu/kobuki/install/include"
+                ,"-I/home/ubuntu/kobuki/install/include/eigen3" 
+                ,"-I/home/ubuntu/realsense/librealsense/include/" 
+                ,"-I/home/ubuntu/realsense/librealsense/examples/C/" 
+                ,"-I/home/ubuntu/realsense/librealsense/include/" 
+                ,"-I/home/ubuntu/realsense/librealsense/third-party/"              
+                ,"-I/usr/local/include"
+                //,"-I/usr/include/opencv4"
+//                g++ -o kobuki_with_rs_program kobuki_with_rs_program.o NatNetClient.o control.o tustin.o 
+                ,"-L/home/ubuntu/kobuki/install/lib/"
+                ,"-L/home/ubuntu/realsense/librealsense/build/release/"                
+                //,"-L/usr/local/lib"
+                //,"-L/usr/lib/aarch64-linux-gnu/"
+                ,"-lrt"
+                ,"-lm"
+                ,"-lpthread"
+                ,"-lkobuki_core"
+                ,"-lecl_geometry"
+                ,"-lecl_threads"
+                ,"-lecl_time"
+                ,"-lecl_exceptions"
+                ,"-lecl_time_lite"
+                ,"-lecl_type_traits"
+                ,"-lrealsense2"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Tâche générée par le débogueur."
+        }
+    ]
+}
